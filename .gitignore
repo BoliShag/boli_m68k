@@ -26,3 +26,6 @@ code/software/lcd-ili9341/rle_images.h
 user.mk
 **/*.bak
 **/*.lck
+/.vs
+/CppProperties.json
+/code/software/libs/build_Rev1X

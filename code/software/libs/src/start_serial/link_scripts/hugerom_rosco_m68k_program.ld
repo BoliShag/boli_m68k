@@ -40,6 +40,7 @@ PROVIDE(_SDB            = 0x00000400);  /* System Data Block            */
 PROVIDE(_SDB_MAGIC      = 0x00000400);  /* SDB magic number             */
 PROVIDE(_SDB_STATUS     = 0x00000404);  /* SDB status code              */
 PROVIDE(_SDB_RSRVD_408  = 0x00000408);  /* SDB reserved                 */
+PROVIDE(_SDB_SYSFLAGS   = 0x0000040A);  /* SDB flags                    */
 PROVIDE(_TIMER_100HZ    = 0x0000040C);  /* 100Hz timer counter          */
 PROVIDE(_EASY68K_ECHOON = 0x00000410);  /* Easy68k 'echo on' flag       */
 PROVIDE(_EASY68K_PROMPT = 0x00000411);  /* Easy68k 'prompt on' flag     */

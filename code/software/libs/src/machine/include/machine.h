@@ -208,6 +208,7 @@ extern void           (*_MFP_VECTORS[16])();  // MFP interrupt vectors
 
 extern uint32_t       _SDB_MAGIC;           // SDB magic number
 extern uint32_t       _SDB_STATUS;          // SDB status code
+extern uint32_t       _SDB_SYSFLAGS;        // SDB sys flags
 extern volatile uint32_t _TIMER_100HZ;      // 100Hz timer counter
 extern uint8_t        _EASY68K_ECHOON;      // Easy68k 'echo on' flag
 extern uint8_t        _EASY68K_PROMPT;      // Easy68k 'prompt on' flag 
