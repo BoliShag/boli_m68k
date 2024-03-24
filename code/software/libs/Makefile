@@ -13,7 +13,7 @@ FLAGS=-ffreestanding -ffunction-sections -fdata-sections				\
 			$(DEFINES)
 CFLAGS=-std=c11 $(FLAGS)
 CXXFLAGS=-std=c++20 -fno-exceptions -fno-rtti $(FLAGS)
-ASFLAGS=-Felf -m$(CPU) -quiet $(DEFINES)
+ASFLAGS=-Felf -m$(CPU) -quiet -wfail $(DEFINES)
 ARFLAGS=
 CC=m68k-elf-gcc
 CXX=m68k-elf-g++

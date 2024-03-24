@@ -17,9 +17,9 @@ SYSINCDIR?=$(ROSCO_M68K_DIR)/code/software/libs/build/include
 SYSLIBDIR?=$(ROSCO_M68K_DIR)/code/software/libs/build/lib
 
 ifneq ($(ROSCO_M68K_HUGEROM),false)
-LDSCRIPT?=$(SYSLIBDIR)/ld/serial/hugerom_rosco_m68k_program.ld
+       LDSCRIPT?=$(SYSLIBDIR)/ld/serial/hugerom_rosco_m68k_program.ld
 else
-LDSCRIPT?=$(SYSLIBDIR)/ld/serial/rosco_m68k_program.ld
+       LDSCRIPT?=$(SYSLIBDIR)/ld/serial/rosco_m68k_program.ld
 endif
 
 DEFINES=-DROSCO_M68K
@@ -33,8 +33,8 @@ GCC_LIBS?=$(shell $(CC) --print-search-dirs \
           | sed 's/libraries: =/-L/g' \
           | sed 's/:/m68000\/ -L/g')m68000/
 LIBS=$(EXTRA_LIBS) -lprintf -lcstdlib -lmachine -lstart_serial -lgcc
-ASFLAGS=-mcpu=$(CPU) -march=$(ARCH)
-VASMFLAGS=-Felf -m$(CPU) -quiet -Lnf $(DEFINES)
+ASFLAGS=-mcpu=$(CPU) -march=$(ARCH)	
+VASMFLAGS=-Felf -m$(CPU) -quiet -wfail -Lnf $(DEFINES)
 LDFLAGS=-T $(LDSCRIPT) -L $(SYSLIBDIR) -Map=$(MAP) --gc-sections --oformat=elf32-m68k $(EXTRA_LDFLAGS)
 
 CC=m68k-elf-gcc
